@@ -1,7 +1,6 @@
-<!DOCTYPE html>
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Kevin Deutscher</title>
   </head>
   <body>
     here are some facts about me...
