@@ -24,11 +24,13 @@
   * New England Patriots
   * Boston Red Sox
 </body>
+
 <body>
   Places I've lived
 
-  - Vermont
+<p>  - Vermont
   - Maine
   - Boston
   - Chicago
+</p>
 </body>
