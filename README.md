@@ -18,7 +18,6 @@
       1.  Steak
       2.  Sushi
 
-
   <p> Favorite sports teams </p>
 
   * Boston Bruins
