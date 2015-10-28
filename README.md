@@ -14,7 +14,8 @@
       1.  Pizza
       2.  Pasta
 
-  3.  1.  Steak
+  3.  Dinner
+      1.  Steak
       2.  Sushi
 
   <p> Favorite sports teams </p>
