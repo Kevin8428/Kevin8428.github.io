@@ -1,0 +1,203 @@
+//to have sass watch and update css, go to sass file in CLI and type 'sass --watch .'
+
+body, html{
+  width: 100%;
+  height:100%;
+  margin: 10px;
+  padding: 10px;
+}
+
+header {
+  background-color: lightgrey;
+  text-align: center;
+  height: 50px;
+  bottom: 50%;
+  content: "";
+  line-height: 50px;
+  margin-bottom: 20px;
+}
+
+#cardSectionHeader{
+  position: relative;
+  font-weight: bold;
+  margin-bottom: 50px;
+  //border: 1px solid black;
+}
+.hitOrStayClass{
+  float: left;
+  border: 1px solid black;
+  width: 45%;
+  height: 8%;
+  margin-left: 20px;
+  margin-bottom: 5px;
+}
+
+.genPlayerCardsClass{
+  border: 1px solid black;
+  float: left;
+  width: 75%;
+  margin-top: 10px;
+  margin-left: 100px;
+  text-align: center;
+  height: 8%
+}
+
+#getPlayerCards{
+  text-align: center;
+  margin-top: 5px;
+  height: 50px;
+  background-color: rgb(133, 163, 140);
+  font-weight: bold;
+}
+
+.genDealerCardsClass{
+  border: 1px solid black;
+  float: left;
+  width: 75%;
+  margin-top: 10px;
+  margin-left: 100px;
+  text-align: center;
+  height: 8%;
+  margin-bottom: 10px;
+}
+
+#stayButton{
+  background-color: lightgrey;
+  height: 20px;
+  width: 50%;
+  margin-left: 95px;
+  margin-top: 15px;
+}
+
+#hitButton{
+  background-color: lightgrey;
+  height: 20px;
+  width: 50%;
+  margin-left: 95px;
+  margin-top: 15px;
+}
+
+#dealerCardButton1{
+  text-align: center;
+  margin-top: 5px;
+  height: 50px;
+  background-color: rgb(133, 163, 140);
+  font-weight: bold;
+}
+
+#displayDealerTotal{
+  margin-top: 50px;
+}
+
+
+
+#wrapper{
+  border: 1px;
+  margin-top: 0px;
+  width: 90%;
+  height: 100%;
+  position: relative;
+}
+
+
+.card1{
+  text-align: center;
+  border: 1px solid black;
+  width: 32%;
+  height: 20%;
+  float: left;
+  margin-bottom: 20px;
+  margin-left: 5px;
+  background-color: rgb(193, 238, 255);
+}
+
+
+.card2{
+  text-align: center;
+  position: relative;
+  border: 1px solid black;
+  width: 32%;
+  clear: right;
+  bottom: 200px;
+  float: left;
+  top: 0px;
+  display: inline-block;
+  height: 20%;
+  margin-bottom: 0px;
+  margin-left: 5px;
+  background-color: rgb(193, 238, 255);
+}
+
+.playerCard3{
+  text-align: center;
+  border: 1px solid black;
+  color: black;
+  width: 32%;
+  height: 20%;
+  float: left;
+  clear: right;
+  display: inline-block;
+  margin-bottom: 20px;
+  margin-left: 5px;
+  background-color: rgb(164, 222, 155);
+}
+
+#cardButton2{
+  margin-top: 0px;
+}
+
+.playerTotal{
+  text-align: center;
+  border: 1px solid black;
+  color: black;
+  width: 32%;
+  height: 20%;
+  float: left;
+  clear: right;
+  display: inline-block;
+  margin-bottom: 20px;
+  margin-left: 5px;
+  background-color: rgb(164, 222, 155);
+}
+
+.dealerClass{
+  float: left;
+  margin-right: 5px;
+  text-align: center;
+  position: relative;
+  margin: 1px;
+  background-color: rgb(193, 238, 255);
+  clear: right;
+  width: 32.3%;
+  height: 25%;
+  border: 1px solid black;
+  margin-bottom: 20px;
+}
+
+.foot{
+  text-align: center;
+  height: 15%;
+  background-color: grey;
+  clear: left;
+  margin-top: 0px;
+  margin-bottom: 10px;
+  position: relative;
+  border: 1px solid black;
+}
+.dealerScore{
+  width: 25%;
+  border: 1px solid black;
+  height: 48%;
+  clear: both;
+  float: left;
+  margin-bottom: 1px;
+}
+
+.playerScore{
+  width: 25%;
+  border: 1px solid black;
+  height: 48%;
+  clear: both;
+  float: left;
+  //float: left;
+}
