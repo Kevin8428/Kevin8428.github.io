@@ -64,6 +64,9 @@ function draw(aaa,bbb){
     if(totalPlayerCardsValue > 21){
       alert('over 21, you lose');
       dealerScore ++;
+      console.log('d: ' + dealerScore);
+      console.log('p: ' + playerScore);
+      console.log('------');
     }
   }
 
@@ -85,6 +88,9 @@ function draw(aaa,bbb){
     if(totalPlayerCardsValue > 21){
       alert('over 21, you lose');
       dealerScore ++;
+      console.log('d: ' + dealerScore);
+      console.log('p: ' + playerScore);
+      console.log('------');
     }
   }
 
@@ -96,10 +102,16 @@ function draw(aaa,bbb){
       if(totalDealerCardsValue > totalPlayerCardsValue && totalDealerCardsValue < 22){
         alert('dealer wins');
         dealerScore ++;
+        console.log('d: ' + dealerScore);
+        console.log('p: ' + playerScore);
+        console.log('------');
       }
       else if(totalDealerCardsValue>21){
         alert('player wins');
         playerScore ++;
+        console.log('d: ' + dealerScore);
+        console.log('p: ' + playerScore);
+        console.log('------');
       }
       else if(totalDealerCardsValue <= totalPlayerCardsValue){
         dealerHit2();
@@ -132,16 +144,25 @@ playerHitButton.addEventListener('click',playerHit);
     if(totalDealerCardsValue > totalPlayerCardsValue && totalDealerCardsValue < 22){
       alert('dealer wins');
       dealerScore ++;
+      console.log('d: ' + dealerScore);
+      console.log('p: ' + playerScore);
+      console.log('------');
     }
     else if(totalDealerCardsValue>21){
       alert('player wins');
-      dealerScore ++;
+      playerScore ++;
+      console.log('d: ' + dealerScore);
+      console.log('p: ' + playerScore);
+      console.log('------');
     }
     else if(totalDealerCardsValue<22 && totalDealerCardsValue<totalPlayerCardsValue){
       //alert('dealer must hit');
       dealerHit();
     }
     //updateDealerScore();
+    console.log('d: ' + dealerScore);
+    console.log('p: ' + playerScore);
+    console.log('------');
   }
 
 
