@@ -1,24 +1,5 @@
 window.onload = function() {
 
-
-//var context = canvas.getContext('2d');
-// var draw1 = document.getElementById('draw');
-// draw1.addEventListener('click',draw);
-//
-//   function draw(x,y){
-//     alert('working');
-//     var canvas = document.getElementById('draw');
-//     var ctx = canvas.getContext('2d');
-//     ctx.save();//save the cavas state if required
-//     ctx.clearRect(0,0,100,100)//clear canvas for redrawing
-//     ctx.fillStyle = 'rgba(0,200,0,1)';//style a green box
-//     ctx.fillRect (x, 20, 50, 50);//draw the rectangle
-//     ctx.restore();//restore the canvas state if saved
-//     x += 5;//increment the x position by some numeric value
-//     var loopTimer = setTimeout('draw('+x+','+y+')',200);
-//   }
-
-//////////////////////////////////////////////////
  var draw1 = document.getElementById('draw');
  draw1.addEventListener('click',draw);
 
@@ -41,23 +22,9 @@ function draw(aaa,bbb){
       var loopTimer = setTimeout(draw, 200); //////THIS WAY IS SHORTER------
     }
 
-//setInterval(function() {
-//  format()
-//}, 1000);
-///////////////////////////////
-
-
-
-
-
-
-
-
   var cardButton = document.getElementById('getPlayerCards');
-  //var cardButton2 = document.getElementById('cardButton2');
   var playerHitButton = document.getElementById('hitButton');
   var genDealerCards1 = document.getElementById('dealerCardButton1');
-  //var cardButton4 = document.getElementById('dealerCardButton2');
   var cardValue = document.getElementById('cardValue');
   var cardValue2 = document.getElementById('cardValue2');
   var playerHit1Div = document.getElementById('playerHit1Div');
@@ -68,8 +35,6 @@ function draw(aaa,bbb){
   var dealerHit3Div = document.getElementById('dealerHit3Div');
   var cardValue3 = document.getElementById('cardValue3');
   var cardValue4 = document.getElementById('cardValue4');
-  //var cardTotalButton = document.getElementById('cardTotalButton');
-  //var cardTotal = document.getElementById('displayTotal');
   var dealerCardTotal = document.getElementById('displayDealerTotal');
 
   var playerCard1Value = 0;
