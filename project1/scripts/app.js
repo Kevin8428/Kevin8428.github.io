@@ -1,5 +1,10 @@
 var ui = {};
 
+var paragraph = document.getElementById("div1");
+var text = document.createTextNode('this is new text');
+paragraph.appendChild(text);
+element.appendChild(paragraph);
+
 window.onload = function() {
 // start canvas -------------------------------------------------------------
  // var draw1 = document.getElementById('draw');
@@ -44,9 +49,6 @@ window.onload = function() {
   ui.updateCardTwoValue = function(newValue) {
     document.getElementById('cardValue2').innerHTML = newValue;
   }
-  ui.skeletonStarter = function() {
-    console.log('i am a real func!');
-  }
   ui.updateDealerCardOneValue = function (newValue){
     document.getElementById('cardValue3').innerHTML = newValue;
   }
@@ -68,14 +70,16 @@ window.onload = function() {
   ui.updatePlayerHit3Value = function (newValue){
     document.getElementById('playerHit3Div').innerHTML = newValue;
   }
-  ui.genTotalPlayerScore = function(newValue){
+
+  ui.genTotalPlayerScore = function(){
     var playerCardsTotalValue = 0;
+
     for (var i = 0; i < totalPlayerCardsArray.length; i++) {
       playerCardsTotalValue = parseInt(playerCardsTotalValue + totalPlayerCardsArray[i]);
+      displayTotal.innerHTML = playerCardsTotalValue;
     }
-    playerCardsTotalValue = newValue;
+    return playerCardsTotalValue;
   }
-
 
 cardButton.addEventListener('click',generatePlayerCards);
 genDealerCards1.addEventListener('click',genDealerCards);
@@ -83,6 +87,32 @@ playerHitButton.addEventListener('click',playerHit);
 //universalHit.addEventListener('click',universalHit);
 
 }//////////END OF WINDOW.ONLOAD
+
+//document.body.onload = addElement;
+
+
+
+
+
+var newDiv = document.createElement("div");
+var newSpan;
+
+
+function addElement () {
+  // create a new div element
+  // and give it some content
+  var newDiv = document.createElement("div");
+  // var newContent = document.createTextNode("Hi there and greetings!");
+  // newDiv.appendChild(newContent); //add the text node to the newly created div.
+  //
+  // // add the newly created element and its content into the DOM
+  // var currentDiv = document.getElementById("div1");
+  // document.body.insertBefore(newDiv, currentDiv);
+}
+
+addElement();
+
+
 
 var playerCard1Value = 0;
 var playerCard2Value = 0;
@@ -105,11 +135,11 @@ var cardMax = 14;
 var player = {
   card1: randCard(),
   card2: randCard(),
-  card3: randCard(),
-  card4: randCard(),
-  card5: randCard(),
-  card6: randCard(),
-  card7: randCard()
+  // card3: randCard(),
+  // card4: randCard(),
+  // card5: randCard(),
+  // card6: randCard(),
+  // card7: randCard()
 }
 
 var dealer = {
@@ -131,11 +161,7 @@ function generatePlayerCards(){
     ui.updateCardValue(player.card1);  //cardValue.innerHTML = player.card1;
     ui.updateCardTwoValue(player.card2);  //cardValue2.innerHTML = player.card2;
     totalPlayerCardsArray.push(player.card1, player.card2);
-    var playerCardsTotalValue = 0;
-    for (var i = 0; i < totalPlayerCardsArray.length; i++) {
-      playerCardsTotalValue = parseInt(playerCardsTotalValue + totalPlayerCardsArray[i]);
-    }
-    displayTotal.innerHTML = playerCardsTotalValue;
+    ui.genTotalPlayerScore();
     if(totalPlayerCardsValue > 21){
       alert('over 21, you lose');
       //dealerScore ++;
@@ -143,63 +169,32 @@ function generatePlayerCards(){
 }
 //when click hit button, have single function create a div given the player/dealer, asign the card value and update the total
 
-function universalHit(target,number){
-  var obj = target + 'Hit' + number + 'Div';
-  return document.getElementById(obj);
-}
-
 function playerHit(){
-    if(playerHit1Value<1){
-      playerHit1Value = player.card3;
-      ui.updatePlayerHit1Value(player.card3);//playerHit1Div.innerHTML = player.card3;
-      totalPlayerCardsArray.push(player.card3);
-      //for loop to get array total
-      for (var i = 0; i < totalPlayerCardsArray.length; i++) {
-        playerCardsTotalValue = parseInt(playerCardsTotalValue + totalPlayerCardsArray[i]);
-      }
-      displayTotal.innerHTML = playerCardsTotalValue
-    }
-    else if(playerHit2Value<1){
-      playerHit2Value = player.card4;
-      ui.updatePlayerHit2Value(player.card4);//playerHit2Div.innerHTML = player.card4;
-      totalPlayerCardsArray.push(player.card4);
-      //for loop to get array total
-      for (var i = 0; i < totalPlayerCardsArray.length; i++) {
-        playerCardsTotalValue = parseInt(playerCardsTotalValue + totalPlayerCardsArray[i]);
-      }
-      displayTotal.innerHTML = playerCardsTotalValue
-    }
-    else if(playerHit3Value<1){
-      playerHit3Value = player.card5;
-      ui.updatePlayerHit3Value(player.card5)//playerHit3Div.innerHTML = player.card5;
-      totalPlayerCardsArray.push(player.card5);
-      //for loop to get array total
-      for (var i = 0; i < totalPlayerCardsArray.length; i++) {
-        playerCardsTotalValue = parseInt(playerCardsTotalValue + totalPlayerCardsArray[i]);
-      }
-      displayTotal.innerHTML = playerCardsTotalValue
-      console.log(totalPlayerCardsArray);
-    }
-    var playerCardsTotalValue = 0;
-    for (var i = 0; i < totalPlayerCardsArray.length; i++) {
-      playerCardsTotalValue = parseInt(playerCardsTotalValue + totalPlayerCardsArray[i]);
-    }
-    console.log(playerCardsTotalValue);
-    displayTotal.innerHTML = playerCardsTotalValue;
+    //assign div and add value to array,
+    console.log(player);
+    var newCard = randCard();
+    totalPlayerCardsArray.push(newCard);
+    console.log(totalPlayerCardsArray);
+    ui.genTotalPlayerScore();
 
-    if(playerCardsTotalValue > 21){
-      alert('over 21, you lose');
-    }
-
-    if(totalPlayerCardsValue > 21){
-      alert('over 21, you lose');
-    }
-
+    // if(playerHit1Value<1){
+    //   playerHit1Value = player.card3;
+    //   ui.updatePlayerHit1Value(player.card3);//playerHit1Div.innerHTML = player.card3;
+    //   totalPlayerCardsArray.push(player.card3);
+    // }
+    // else if(playerHit2Value<1){
+    //   playerHit2Value = player.card4;
+    //   ui.updatePlayerHit2Value(player.card4);//playerHit2Div.innerHTML = player.card4;
+    //   totalPlayerCardsArray.push(player.card4);
+    // }
+    // else if(playerHit3Value<1){
+    //   playerHit3Value = player.card5;
+    //   ui.updatePlayerHit3Value(player.card5)//playerHit3Div.innerHTML = player.card5;
+    // }
+    // ui.genTotalPlayerScore();
 }
 
 function genDealerCards(){
-  // dealerCard1Value = randCard();
-  // dealerCard2Value = randCard();
   ui.updateDealerCardOneValue(dealer.card1);//cardValue3.innerHTML = dealer.card1;
   ui.updateDealerCardTwoValue(dealer.card2);//cardValue4.innerHTML = dealer.card2;
   totalDealerCardsValue = dealer.card1 + dealer.card2;
