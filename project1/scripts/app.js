@@ -2,11 +2,6 @@ var ui = {};
 
 window.onload = function() {
 
-  var cardButton = document.getElementById('getPlayerCards');
-  var playerHitButton = document.getElementById('hitButton');
-  var genDealerCards1 = document.getElementById('dealerCardButton1');
-
-
 //  subtotal of all array values
 //   genTotalPlayerScore = function(){
 //     var playerCardsTotalValue = 0;
@@ -17,11 +12,20 @@ window.onload = function() {
 //     //return playerCardsTotalValue;
 // }
 
-
-cardButton.addEventListener('click',generatePlayerCards);
+//var nPlayers = prompt('number of players: ');
+var cardButton = document.getElementById('getPlayerCards');
+var playerHitButton = document.getElementById('hitButton');
+var genDealerCards1 = document.getElementById('dealerCardButton1');
 genDealerCards1.addEventListener('click',genDealerCards);
-playerHitButton.addEventListener('click',playerHit);
 playAgain.addEventListener('click',clearCards);
+
+cardButton.onclick = function(){
+  player1.generatePlayerCards();
+};
+playerHitButton.onclick = function(){
+  player1.playerHit();
+};
+}//////END OF WINDOW.ONLOAD///////////////////////////////////////////////////
 
 
 function clearCards(){
@@ -63,7 +67,49 @@ ui.addDealerElement = function() {
       dealerCheck();
 }
 
-}//////////END OF WINDOW.ONLOAD
+var player1 = new player();
+
+// ui.addPlayerElement = function() {
+//   console.log('test');
+// }
+
+///.protype
+
+
+
+function player(){
+
+  this.generatePlayerCards = function (){
+    //console.log('works');
+      currentCard = randCard();
+      this.transformPlayerCard(currentCard);
+      currentCard = randCard();
+      this.transformPlayerCard(currentCard);
+  };
+  this.playerHit = function (){
+      currentCard = randCard();
+      this.transformPlayerCard(currentCard);
+  };
+
+  this.transformPlayerCard = function(cardInput){
+        if(cardInput == 1){
+          cardUpdate = 11;
+        }
+        else if(cardInput >10){
+          cardUpdate = 10;
+        }
+        else {
+          cardUpdate = cardInput;
+        }
+        ui.addPlayerElement(cardUpdate);
+  };
+
+};
+
+
+
+
+
 var playerBank = 100;
 var dealerBank = 100;
 var cardMin = 1;
@@ -72,34 +118,24 @@ var currentCard = 0;
 var playerScore = 0;
 var dealerScore = 0;
 var cardUpdate;
-var nPlayers = prompt('number of players: ');
 
 
 
-pickSuit = function(){
-    var suit = randSuit();
-    if(suit ==1)
-    return "spades";
-    if(suit ==2)
-    return "clubs";
-    if(suit ==3)
-    return "diamonds";
-    if(suit ==4)
-    return "hearts";
-}
+// transformPlayerCard = function(cardInput){
+//     if(cardInput == 1){
+//       cardUpdate = 11;
+//     }
+//     else if(cardInput >10){
+//       cardUpdate = 10;
+//     }
+//     else {
+//       cardUpdate = cardInput;
+//     }
+//     console.log('works');
+//     ui.addPlayerElement(cardUpdate);
+// }
 
-transformPlayerCard = function(cardInput){
-    if(cardInput == 1){
-      cardUpdate = 11;
-    }
-    else if(cardInput >10){
-      cardUpdate = 10;
-    }
-    else {
-      cardUpdate = cardInput;
-    }
-    ui.addPlayerElement(cardUpdate);
-}
+
 
 transformDealerCard = function(cardInput){
     if(cardInput == 1){
@@ -134,18 +170,6 @@ function randSuit(){
     return genRandCard;
 }
 
-function generatePlayerCards(){
-    currentCard = randCard();
-    transformPlayerCard(currentCard);
-    currentCard = randCard();
-    transformPlayerCard(currentCard);
-}
-
-function playerHit(){
-    currentCard = randCard();
-    transformPlayerCard(currentCard);
-}
-
 function genDealerCards(){
     currentCard = randCard();
     transformDealerCard(currentCard);
@@ -174,53 +198,42 @@ function dealerHit(){
   transformDealerCard(currentCard);
 }
 
-//generate cards for multiple players
-
-//generate cards
-
-function genmultiPlrCrds(cardOne, cardTwo){
-    this.cardOne = randCard(),
-    this.cardTwo = randCard(),
-    this.ui.addDealerElement(),
-
-
-    //transformPlayerCard(currentCard);
-    //currentCard = randCard();
-    //transformPlayerCard(currentCard);
-};
-
-david = new genmultiPlrCrds();
 
 
 
+///////////////////////////////////////////////////////////////////////////////////////////
+// var deck1 = new play();
+// deck1.buildDeck();
+// deck1.selectCard();
+// //deck1.shuffleDeck();
+//
+// function play(){
+//
+// var suitArr = ['spades', 'hearts', 'clubs', 'diamonds'];
+// var cardArr = ['two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine','ten', 'jack', 'queen', 'king', 'ace', ];
+// var deckArr = [];
+//
+//     this.buildDeck = function buildDeck(){
+//         for(i=0; i<suitArr.length; i++){
+//           var suit = suitArr[i];
+//           //console.log(suit);
+//           for(j=0; j<cardArr.length; j++){
+//             var card = cardArr[j]+ " of " + suit;
+//             deckArr.push(card);
+//           };
+//         };
+//         console.log(deckArr);
+//         //console.log(deckArr.length);
+//     };
+//     this.selectCard = function selectCard(){
+//         var cardPlacement = randCard();
+//         //console.log(cardPlacement);
+//         var cardPicked = deckArr[cardPlacement];
+//         console.log(cardPicked);
+//         //console.log(deckArr);
+//     }
+// };
 
-function genPlayer(name, chips, score){
-  this.name = name,
-  this.chips = chips,
-  this.score = score
-};
-
-var james = {
-  eyeColor: 'blue',
-  hairColor: 'brown',
-  42: 'secret',
-  height: 72
-};
 
 
-//can only pull '42' using james['42']
-// last line of section SHOULD NOT HAVE COMMA
-
-//james['eyeColor']] -- this will access the property
-//james.eyeColor
-
-
-
-
-
-
-
-
-
-
-//var david = new genPlayer("dave", 200, 0);
+//
