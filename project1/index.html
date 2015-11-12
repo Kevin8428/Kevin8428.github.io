@@ -10,133 +10,35 @@
   </head>
   <body>
 
-    <div id="div1">The text above has been created dynamically.</div>
-    <!--///////////////////////CANVAS/////////////////////////////////-->
-
-    <!-- <button id = 'draw'>Draw</button>
-    <canvas id="canvas" width="500" height="500" style="border: 1px solid black"></canvas> -->
-    <!--///////////////////END CANVAS/////////////////////////////////-->
-
 
   <div id='wrapper'>
     <header>
       BLACKJACK
     </header>
-
-<!--///////////////////////GET PLAYER CARDS BUTTON////////////////////////!-->
-
-    <section class = 'genDealerCardsClass'>
+      <section class = 'buttonClass'>
       <button id = 'getPlayerCards'>GET PLAYER CARDS</button>
-      <!--<button id = 'dealerButton'>GET DEALER CARDS</button>!-->
-    </section>
-
-
-
-<!--///////////////////////PLAYER CARD SECTION/////////////////////////////!-->
-    <section class = 'card1'>
-      <span id ='cardSectionHeader'>CARD ONE</span></p>
-      <!--<button id = 'cardButton1'>generate card one</button>!-->
-      <div>player card 1 value: </div></p>
-      <div id = 'cardValue'>no card selected</div>
-    </section>
-
-    <section class = 'card2'>
-      <span id = 'cardSectionHeader'>CARD TWO</span></p>
-      <!--<button id = 'cardButton2'>generate card two</button>!-->
-      <div>player card 2 value: </div></p>
-      <div id = 'cardValue2'>no card selected</div>
-    </section>
-
-    <section class = 'playerTotal'>
-      <span id = 'cardSectionHeader'>PLAYER TOTAL</span></P>
-      <!--<button id = 'cardTotalButton'>get total</button>!-->
-      <div>Total: </div></p>
-      <div id = 'displayTotal'>no card selected</div>
-    </section>
-
-<!--////////////////////////PLAYER HIT CARDS//////////////////////////////!-->
-
-    <section class = 'card1'>
-      <span id = 'cardSectionHeader'>CARD THREE</span></p>
-      <div id = 'playerHit1Div'></div>
-    </section>
-    <section class = 'card1'>
-      <span id = 'cardSectionHeader'>CARD FOUR</span></p>
-      <div id = 'playerHit2Div'></div>
-    </section>
-    <section class = 'card1'>
-      <span id = 'cardSectionHeader'>CARD FIVE</span></p>
-      <div id = 'playerHit3Div'></div>
-    </section>
-
-
-
-<!--////////////////////////HIT OR STAY//////////////////////////////!-->
-
-    <section class = 'hitOrStayClass'>
       <button id = 'hitButton'>HIT</button>
-    </section>
-
-    <section class = 'hitOrStayClass'>
-      <button id = 'stayButton'>STAY</button>
-    </section>
-
-<!--////////////////////////GET DEALER CARDS BUTTON///////////////////!-->
-
-    <section class = 'genDealerCardsClass'>
       <button id = 'dealerCardButton1'>GET DEALER CARDS</button>
-      <!--<button id = 'dealerButton'>GET DEALER CARDS</button>!-->
+      <button id = 'playAgain'>PLAY AGAIN</button>
+      <!--<button id = 'dealerHitButton'></button>!-->
     </section>
 
-<!--////////////////////////DEALER CARDS///////////////////////////////!-->
-
-    <section class = 'dealerClass'>
-      <span id = 'cardSectionHeader'>DEALER CARD ONE</span></p>
-
-      <div>dealer card 1 value: </div></p>
-      <div id = 'cardValue3'>no card selected</div>
+    <section class = 'resultsClass'>
+      <section id = 'playerCardSection'></section>
+      <section id = 'dealerCardSection'></section>
     </section>
 
-    <section class = 'dealerClass'>
-      <span id = 'cardSectionHeader'>DEALER CARD TWO</span></p>
-      <div>card 1 value: </div></p>
-      <div id = 'cardValue4'>no card selected</div>
+    <section class = 'scoreClass'>
+      <section id = 'playerScore'>playerScore</section>
+      <section id = 'dealerScore'>dealerScore</section>
     </section>
 
-    <section class = 'dealerTotal'>
-      <span id = 'cardSectionHeader'>DEALER TOTAL</span></p>
-      <!--<button id = 'dealerCardButton3'>get total</button>!-->
-      <div id = 'displayDealerTotal'>no card selected</div>
+    <section class = 'chipClass'>
+      <section id = 'playerChips'>100</section>
+      <section id = 'dealerChips'>100</section>
     </section>
 
-<!--////////////////////////DEALER HIT CARDS/////////////////////////!-->
 
-    <section class = 'dealerClass'>
-      <span id = 'cardSectionHeader'>DEALER CARD THREE</span></p>
-      <div id = 'dealerHit1Div'></div>
-    </section>
-
-    <section class = 'dealerClass'>
-      <span id = 'cardSectionHeader'>DEALER CARD FOUR</span></p>
-      <div id = 'dealerHit2Div'></div>
-    </section>
-
-    <section class = 'dealerClass'>
-      <span id = 'cardSectionHeader'>DEALER CARD FIVE</span></p>
-      <div id = 'dealerHit3Div'></div>
-    </section>
-
-<!--////////////////////////RESULTS///////////////////////////////////!-->
-
-    <section class = 'foot'>
-      RESULT
-      <section class = 'dealerScore'>dealer</p>
-        <div id = 'dealerScoreID'>0</div>
-      </section>
-      <section class = 'playerScore'>player</p>
-        <div id = 'playerScoreID'>0</div>
-      </section>
-    </section>
 
 
   </div>
