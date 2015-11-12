@@ -1,4 +1,10 @@
 //to have sass watch and update css, go to sass file in CLI and type 'sass --watch .'
+
+#wrapper{
+  width: 80%;
+  background-color: rgb(87, 193, 116);
+}
+
 #playerCardSection{
   width: 20%;
   float: left;
@@ -49,6 +55,7 @@
   float: left;
   display: inline-block;
   position: relative;
+  background-color: rgb(87, 193, 116);
 }
 
 #dealerChips{

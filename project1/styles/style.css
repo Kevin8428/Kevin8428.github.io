@@ -1,3 +1,7 @@
+#wrapper {
+  width: 80%;
+  background-color: #57c174; }
+
 #playerCardSection {
   width: 20%;
   float: left;
@@ -39,7 +43,8 @@
   border: 1px solid lightgrey;
   float: left;
   display: inline-block;
-  position: relative; }
+  position: relative;
+  background-color: #57c174; }
 
 #playerChips {
   width: 200px;
