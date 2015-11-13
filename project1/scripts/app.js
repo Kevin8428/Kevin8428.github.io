@@ -1,22 +1,9 @@
 var ui = {};
 
 window.onload = function() {
-
-//  subtotal of all array values
-//   genTotalPlayerScore = function(){
-//     var playerCardsTotalValue = 0;
-//     for (var i = 0; i < totalPlayerCardsArray.length; i++){
-//       playerCardsTotalValue = parseInt(playerCardsTotalValue + totalPlayerCardsArray[i]);
-//       displayTotal.innerHTML = playerCardsTotalValue;
-//     }
-//     //return playerCardsTotalValue;
-// }
-
-//var nPlayers = prompt('number of players: ');
 var cardButton = document.getElementById('getPlayerCards');
 var playerHitButton = document.getElementById('hitButton');
 var genDealerCards1 = document.getElementById('dealerCardButton1');
-//genDealerCards1.addEventListener('click',genDealerCards);
 playAgain.addEventListener('click',clearCards);
 
 cardButton.onclick = function(){
@@ -24,25 +11,29 @@ cardButton.onclick = function(){
   play();
 };
 
-// cardButton.onclick = function(){
-//   player1.generatePlayerCards();
-// };
-
 playerHitButton.onclick = function(){
   play().selectCard();
 };
 
 dealerCardButton1.onclick = function(){
   genDealerCards();
-}
+};
+};//////END OF WINDOW.ONLOAD///////////////////////////////////////////////////
 
-
-
-// playerHitButton.onclick = function(){
-//   player1.playerHit();
-// };
-}//////END OF WINDOW.ONLOAD///////////////////////////////////////////////////
-
+var playerBank = 100;
+var dealerBank = 100;
+var cardMin = 1;
+var cardMax = 14;
+var currentCard = 0;
+var playerScore = 0;
+var dealerScore = 0;
+var cardUpdate = 0;
+var dlrCardUpdate;
+var suitArr = ['spades', 'hearts', 'clubs', 'diamonds'];
+var cardArr = ['two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine','ten', 'jack', 'queen', 'king', 'ace', ];
+var deckArr = [];
+var cardPlacement;
+var cardPicked;
 
 function clearCards(){
     document.getElementById('playerScore').innerHTML = 0;
@@ -53,12 +44,12 @@ function clearCards(){
     while(dealerDiv.firstChild) dealerDiv.removeChild(dealerDiv.firstChild);
     dealerScore = 0;
     playerScore = 0;
-}
+};
 
 ui.updateScores = function() {
     document.getElementById('playerChips').innerHTML = playerBank;
     document.getElementById('dealerChips').innerHTML = dealerBank;
-}
+};
 
 ui.addPlayerElement = function() {
       var newDiv = document.createElement("div");
@@ -81,134 +72,17 @@ ui.addDealerElement = function() {
       dealerScore = dealerScore + dlrCardUpdate;
       document.getElementById('dealerScore').innerHTML = dealerScore;
       dealerCheck();
-      // console.log('works');
-      // if(dealerScore>21){
-      //   alert('dealer bust');
-      // };
-      // if(dealerScore<21 && dealerScore <playerScore){
-      //   genDealerCards();
-      // };
-      // if(dealerScore<=21 && dealerScore > playerScore){
-      //   alert('dealer wins');
-      // };
 };
-
-//var player1 = new player();
-
-// ui.addPlayerElement = function() {
-//   console.log('test');
-// }
-
-///.protype
-
-
-
-
-
-// function player(){
-//
-//   this.generatePlayerCards = function (){
-//     //console.log('works');
-//       currentCard = randCard();
-//       this.transformPlayerCard(currentCard);
-//       currentCard = randCard();
-//       this.transformPlayerCard(currentCard);
-//   };
-  // this.playerHit = function (){
-  //     currentCard = randCard();
-  //     this.transformPlayerCard(currentCard);
-  // };
-
-  // this.transformPlayerCard = function(cardInput){
-  //       if(cardInput == 1){
-  //         cardUpdate = 11;
-  //       }
-  //       else if(cardInput >10){
-  //         cardUpdate = 10;
-  //       }
-  //       else {
-  //         cardUpdate = cardInput;
-  //       }
-  //       console.log(cardUpdate + 'is card update');
-  //       ui.addPlayerElement(cardUpdate);
-  // };
-
-// };
-
-
-
-
-
-var playerBank = 100;
-var dealerBank = 100;
-var cardMin = 1;
-var cardMax = 14;
-var currentCard = 0;
-var playerScore = 0;
-var dealerScore = 0;
-var cardUpdate = 0;
-
-
-
-// transformPlayerCard = function(cardInput){
-//     if(cardInput == 1){
-//       cardUpdate = 11;
-//     }
-//     else if(cardInput >10){
-//       cardUpdate = 10;
-//     }
-//     else {
-//       cardUpdate = cardInput;
-//     }
-//     console.log('works');
-//     ui.addPlayerElement(cardUpdate);
-// }
-
-
-
-
-
-
-
-//
-//
-// transformDealerCard = function(cardInput){
-//     if(cardInput == 1){
-//       dlrCardUpdate = 11;
-//     }
-//     else if(cardInput >10){
-//       dlrCardUpdate = 10;
-//     }
-//     else {
-//       dlrCardUpdate = cardInput;
-//     }
-//     ui.addDealerElement(dlrCardUpdate);
-// }
-
-// cardValue = function(){
-//     if(card ==1){
-//       return 11;
-//     }
-//     if(card > 10){
-//       return 10;
-//     }
-//     return card;
-// }
 
 function randCard(){
     var genRandCard = Math.floor(Math.random()*cardMax)+1;
     return genRandCard;
-}
+};
 
 function randSuit(){
     var genRandCard = Math.floor(Math.random()*4)+1;
     return genRandCard;
-}
-
-// function genDealerCards(){
-//     currentCard = randCard();
-//     transformDealerCard(currentCard);
-// }
+};
 
 function dealerCheck(){
     if(dealerScore<=playerScore){
@@ -225,15 +99,8 @@ function dealerCheck(){
       dealerBank += 10;
       ui.updateScores();
       alert('dealer wins');
-    }
-}
-
-// function dealerHit(){
-//   currentCard = randCard();
-//   transformDealerCard(currentCard);
-// }
-
-var dlrCardUpdate;
+    };
+};
 
 function genDealerCards(){
   cardPlacement = randPosition();
@@ -241,65 +108,38 @@ function genDealerCards(){
   console.log(cardPicked);
   dlrCardUpdate = getCardValue();
   ui.addDealerElement(cardPicked);
-}
+  console.log(deckArr);
+};
 
 
 
-var suitArr = ['spades', 'hearts', 'clubs', 'diamonds'];
-var cardArr = ['two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine','ten', 'jack', 'queen', 'king', 'ace', ];
-var deckArr = [];
-
-
-/////////////////////////////////////////////////////////////////////////////////////////
-// var deck1 = new play();
-// deck1.buildDeck();
-// deck1.selectCard();
-//deck1.shuffleDeck();
-
-var cardPlacement;
-var cardPicked;
-
-function play(){
-
-
-
+function play()
+{
+    deckArr = [];
     buildDeck = function buildDeck(){
         for(i=0; i<suitArr.length; i++){
           var suit = suitArr[i];
-          //console.log(suit);
           for(j=0; j<cardArr.length; j++){
             var card = cardArr[j]+ " of " + suit;
             deckArr.push(card);
           };
         };
-        //console.log(deckArr);
-        //console.log(deckArr.length);
     };
-buildDeck();
+    buildDeck();
     selectCard = function selectCard(){
         cardPlacement = randPosition();
-        //console.log(cardPlacement);
         cardPicked = deckArr[cardPlacement];
         cardUpdate = getCardValue();
         ui.addPlayerElement(cardPicked);
-    }
-selectCard();
-getCardValue();
-//pushCardValue();
-
+    };
+    selectCard();
+    getCardValue();
 };
 
 function randPosition(){
-    var genRandCard = Math.floor(Math.random()*52)+1;
+    var genRandCard = Math.floor(Math.random()*52);
     return genRandCard;
-}
-
-// function getTotalValue(){
-//
-// }
-
-
-console.log(value + ' is card value');
+};
 
 function getCardValue(){
 var n = cardPlacement;
@@ -410,6 +250,5 @@ switch(n)
   case 51: value = 11;
   break;
 };
-//console.log(value)
 return value;
 };
