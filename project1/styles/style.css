@@ -25,7 +25,8 @@
 .resultsClass {
   border: 1px solid black;
   height: 20%;
-  height: 200px; }
+  height: 200px;
+  border: 1px solid black; }
 
 #playerScore {
   clear: both;
@@ -40,7 +41,7 @@
 
 .chipClass {
   width: 100%;
-  border: 1px solid lightgrey;
+  border: 1px solid black;
   float: left;
   display: inline-block;
   position: relative;
@@ -50,7 +51,6 @@
   width: 200px;
   float: left;
   text-align: left;
-  margin-right: 0px;
-  border: 1px solid black; }
+  margin-right: 0px; }
 
 /*# sourceMappingURL=style.css.map */
