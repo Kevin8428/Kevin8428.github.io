@@ -13,9 +13,6 @@ Thinking about the rules of blackjack I aimed to build a two person game between
 player and the dealer. Both people start with equal chips and the game is won/lost when
 either person loses/collects all the chips.
 
-At the window.onload event listeners connect the cards, hit, clear and dealer cards functions
-to the viewed buttons.
-
 My scope was to build two entities within the DOM where player cards, chips and current hand
 score can be stored.
 
