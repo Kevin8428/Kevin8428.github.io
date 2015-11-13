@@ -1,14 +1,14 @@
 ##BLACKJACK
 
-##Technology Used--------
+###Technology Used--------
 HTML, SASS, CSS and Javascript
 
-##Installation Instructions--------
+###Installation Instructions--------
 Open the github link provided below.
 
 Link: http://kevin8428.github.io/project1/
 
-##Approach--------
+###Approach--------
 Thinking about the rules of blackjack I aimed to build a two person game between the
 player and the dealer. Both people start with equal chips and the game is won/lost when
 either person loses/collects all the chips.
@@ -22,7 +22,7 @@ score can be stored.
 My initial goal was to build multiple constructors so that any functionality for one player
 can be replicated easily to allow for the user to choose number of hands they wish to play.
 
-##Unsolved Problems--------
+###Unsolved Problems--------
 
 When a card is dealt it isn't removed from the deck.
 The dealers first card isn't shown at the start of each hand.
