@@ -1,24 +1,28 @@
-BLACKJACK
+##BLACKJACK
 
-Technology Used--------
-HTML, CSS and Javascript.
+##Technology Used--------
+HTML, SASS, CSS and Javascript
 
-Approach--------
+##Installation Instructions--------
+Open the github link provided below.
+
+Link: http://kevin8428.github.io/project1/
+
+##Approach--------
+Thinking about the rules of blackjack I aimed to build a two person game between the
+player and the dealer. Both people start with equal chips and the game is won/lost when
+either person loses/collects all the chips.
+
 At the window.onload event listeners connect the cards, hit, clear and dealer cards functions
 to the viewed buttons.
 
-The player functions are contained within a player constructor so that multiple
-players will be able to play (not yet completed).
+My scope was to build two entities within the DOM where player cards, chips and current hand
+score can be stored.
 
-All cards go through a "transformation" function which turns aces into value 11 and
-all face cards into a value of 10.
+My initial goal was to build multiple constructors so that any functionality for one player
+can be replicated easily to allow for the user to choose number of hands they wish to play.
 
-Dealer will hit until beating the player or exceed 21 (bust).
+##Unsolved Problems--------
 
-Player and dealer each start with 100 chips.
-
-Unsolved Problems--------
-
-There is no true deck yet, so values can be repeated.
-There is no image associated with the card/value.
-The player constructor hasn't been built out to functionally allow for multiple players.
+When a card is dealt it isn't removed from the deck.
+The dealers first card isn't shown at the start of each hand.
